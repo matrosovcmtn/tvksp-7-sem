@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: matrosov-ikbo-01-21
+  labels:
+    app: matrosov-ikbo-01-21
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: matrosov-ikbo-01-21
+  template:
+    metadata:
+      labels:
+        app: matrosov-ikbo-01-21
+    spec:
+      containers:
+        - name: matrosov-ikbo-01-21
+          image: truecmetanka/node-server
+          ports: 
+            - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: matrosov-ikbo-01-21-service
+spec:
+  selector:
+    app: matrosov-ikbo-01-21
+  type: LoadBalancer
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30000

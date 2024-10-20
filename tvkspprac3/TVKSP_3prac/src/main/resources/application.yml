@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: postgres${SPRING_DATASOURCE_USERNAME}
+    password: postgres${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  application:
+    name: TVKSP_3prac
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

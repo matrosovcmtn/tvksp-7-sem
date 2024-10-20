@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  application:
+    name: TVKSP_3prac
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+graylog:
+  api:
+    username: admin
+    password: admin
+    url: ${GRAYLOG_URL}
+
+server:
+  port: ${SERVER_PORT}
